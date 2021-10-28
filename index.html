@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>challengejavascript</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="titre">Dashboard boutique</h1>
+    </header>
+
+    <form>
+        <fieldset>
+            <legend>Panel d'administration de la boutique</legend>
+
+            <label for="email">Entrez votre email</label>
+            <input type="email" id="email" placeholder="Entrez votre email"
+                pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" required><br>
+
+
+            <h2>Ajouter un nouveau produit</h2><br>
+
+            <label for="nameproduit">Nom du produit</label>
+            <div>
+                <input type="text" placeholder="Nom du produit" id="nameproduit" required><span></span>
+            </div><br>
+
+            <label for="categorie">Catégorie</label>
+            <div>
+                <select name="categorie" id="categorie" required>
+                    <option value="">Choisir une catégorie</option>
+                    <option value="jouet">Jouets</option>
+                    <option value="loisirs">Loisirs</option>
+                    <option value="multimedia">Multimédia</option>
+                    <option value="electromenager">Electroménager</option>
+                    <option value="voitures">Voitures</option>
+                    <option value="vetements">Vêtements</option>
+                </select>
+                <span></span>
+            </div><br>
+
+            <label for="image">Choisir une image pour le produit</label>
+
+            <input type="file" id="image" accept="image/*" onchange="loadFile(event)">
+            <img id="output" width="500px" height="auto" /><br>
+
+
+            <label for="description">Description du produit</label>
+            <div>
+                <textarea id="description" required style="height: 150px; width: 600px;"></textarea><span></span>
+            </div><br>
+
+            <label for="prix">Prix du produit</label>
+            <div>
+                <input type="number" id="prix" placeholder="0,00 €" min="0" step="0.01" required><span></span>
+            </div><br>
+
+            <label for="prix">Faire un don</label>
+            <input type="checkbox" id="don" required><br>
+
+
+            <!-- Adresse -->
+
+            <label>Où se situe le produit ?</label>
+            <div>
+                <input id="autocomplete" placeholder="Entrez l'adresse" onFocus="geolocate()" type="text" required
+                    style="width: 400px;"><span></span>
+            </div>
+
+            <label>Numero</label>
+            <input id="street_number" disabled>
+
+            <label>Adresse</label>
+            <input id="route" disabled>
+
+            <label>Ville</label>
+            <input id="locality" disabled>
+
+            <label>Departement</label>
+            <input id="administrative_area_level_1" disabled>
+
+            <label>Code Postal</label>
+            <input id="postal_code" disabled>
+
+            <label>Pays</label>
+            <input id="country" disabled><br>
+
+            <input type="submit" value="Envoyer" onclick="popUp()"><br>
+
+            <input type="reset" value="Réinitialiser">
+
+        </fieldset>
+    </form>
+
+    <footer>
+        <marquee behavior="alternate">
+            <div id="color">
+                <p>Changer la couleur de fond :</p>
+
+                <label for="colorWell"></label>
+                <input type="color" id="colorWell">
+
+                <p>Changer la couleur du texte :</p>
+
+                <label for="colorText"></label>
+                <input type="color" id="colorText">
+            </div>
+        </marquee>
+    </footer>
+
+    <script src="script.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtW8kugEQB9Hf5ehd1z32oVcav-hKirjg&libraries=places&callback=initAutocomplete"
+        async defer></script>
+    <script src="autocomplete.js"></script>
+    <script>
+        var loadFile = function (event) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var output = document.getElementById('output');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        };
+    </script>
+</body>
+
+</html>
