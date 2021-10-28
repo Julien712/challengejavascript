@@ -1,70 +1,70 @@
-body{
-	background: rgba(0, 255, 0, 0.616);
-    color: #888;
-    font-family: 'Audiowide', cursive;
-    text-align: center;
-}
-
-.titre{
-	font-size: 60px;
-	color: rgba(0, 0, 255, 0.555);
-	margin: 0;
-}
-
-form{
-	max-width: 100%;
-	height: auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-legend{
-	font-size: 40px;
-}
-
-label{
-	font-size: 20px;
-}
-
-fieldset{
-	width: 90%;
-	height: auto;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-    background-color: whitesmoke;
-    border-radius: 20px;
-}
-
-h2{
-	font-size: 30px;
-	margin: 10px;
-}
-
-input:invalid+span:after, select:invalid+span:after, textarea:invalid+span:after {
-    position: absolute;
-    content: '✖';
-    padding-left: 5px;
-    color: red;
-}
-
-input:valid+span:after, select:valid+span:after, textarea:valid+span:after {
-    position: absolute;
-    content: '✓';
-    padding-left: 5px;
-    color: lime;
-}
-
-#color{
-    width: 800px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 21px;
-}
-
-::-webkit-resizer{
-    display: none;
+body {
+    background: rgba(0, 255, 0, 0.616);
+    color: #888;
+    font-family: 'Audiowide', cursive;
+    text-align: center;
+}
+
+.titre {
+    font-size: 60px;
+    color: rgba(0, 0, 255, 0.555);
+    margin: 0;
+}
+
+form {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+legend {
+    font-size: 40px;
+}
+
+label {
+    font-size: 20px;
+}
+
+fieldset {
+    width: 90%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+
+h2 {
+    font-size: 30px;
+    margin: 10px;
+}
+
+input:invalid+span:after, select:invalid+span:after, textarea:invalid+span:after {
+    position: absolute;
+    content: '✖';
+    padding-left: 5px;
+    color: red;
+}
+
+input:valid+span:after, select:valid+span:after, textarea:valid+span:after {
+    position: absolute;
+    content: '✓';
+    padding-left: 5px;
+    color: lime;
+}
+
+#color {
+    width: 800px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 21px;
+}
+
+::-webkit-resizer {
+    display: none;
 }
